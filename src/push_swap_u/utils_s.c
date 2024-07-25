@@ -6,7 +6,7 @@
 /*   By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 15:52:39 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/07/23 15:04:40 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/07/25 12:25:02 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ int	check_sorted(t_stack_node *s)
 	while (s->next)
 	{
 		if (s->nbr > s->next->nbr)
-			return (1);
+			return (0);
 		s = s->next;
 	}
-	return (0);
+	return (1);
 }
 
 t_stack_node	*find_min(t_stack_node *s)

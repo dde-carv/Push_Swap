@@ -6,7 +6,7 @@
 #    By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/02 09:56:48 by dde-carv          #+#    #+#              #
-#    Updated: 2024/07/22 16:59:12 by dde-carv         ###   ########.fr        #
+#    Updated: 2024/07/24 12:58:31 by dde-carv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,12 +28,12 @@ COMMANDS_DIR	=	$(SRC_DIR)commands/push.c \
 			$(SRC_DIR)commands/sort_three.c \
 			$(SRC_DIR)commands/swap.c
 
-PUSH_SWAP_DIR	=	$(SRC_DIR)push_swap/errors.c \
-			$(SRC_DIR)push_swap/init_ab.c \
-			$(SRC_DIR)push_swap/init_ba.c \
-			$(SRC_DIR)push_swap/init_s.c \
-			$(SRC_DIR)push_swap/main.c \
-			$(SRC_DIR)push_swap/utils_s.c
+PUSH_SWAP_DIR	=	$(SRC_DIR)push_swap_u/errors.c \
+			$(SRC_DIR)push_swap_u/init_ab.c \
+			$(SRC_DIR)push_swap_u/init_ba.c \
+			$(SRC_DIR)push_swap_u/init_s.c \
+			$(SRC_DIR)push_swap_u/main.c \
+			$(SRC_DIR)push_swap_u/utils_s.c
 
 SRCS	=	$(COMMANDS_DIR) $(PUSH_SWAP_DIR)
 

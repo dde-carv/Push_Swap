@@ -6,7 +6,7 @@
 /*   By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 16:23:57 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/07/20 17:55:08 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/07/25 12:28:31 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void	index_s(t_stack_node *s)
 	{
 		s->index = len;
 		if (len <= mid)
-			s->above_median = 0;
-		else
 			s->above_median = 1;
+		else
+			s->above_median = 0;
 	s = s->next;
 	len++;
 	}
@@ -87,7 +87,7 @@ void	set_cheap(t_stack_node *s)
 
 	if (!s)
 		return ;
-	cheap_value = LLONG_MAX;
+	cheap_value = LONG_MAX;
 	while (s)
 	{
 		if (s->push_cost < cheap_value)
@@ -97,7 +97,7 @@ void	set_cheap(t_stack_node *s)
 		}
 		s = s->next;
 	}
-	cheap_node->cheapest = 0;
+	cheap_node->cheapest = 1;
 }
 
 void	init_na(t_stack_node *a, t_stack_node *b)

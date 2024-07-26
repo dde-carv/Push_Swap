@@ -4,3 +4,4 @@ obj/
 *.a
 *.swp
 push_swap
+.dist/

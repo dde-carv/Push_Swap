@@ -6,7 +6,7 @@
 /*   By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 17:24:02 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/07/23 14:35:34 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/07/30 14:11:15 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,6 @@ void	free_stack(t_stack_node **s)
 void	free_errors(t_stack_node **a)
 {
 	free_stack(a);
-	ft_printf("Error!\n");
+	ft_printf("Error\n");
 	exit(1);
 }

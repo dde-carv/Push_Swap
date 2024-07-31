@@ -6,11 +6,12 @@
 #    By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/02 09:56:48 by dde-carv          #+#    #+#              #
-#    Updated: 2024/07/24 12:58:31 by dde-carv         ###   ########.fr        #
+#    Updated: 2024/07/31 15:41:38 by dde-carv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	push_swap
+NAME_B	=	checker
 
 LIBFT	=	./libft/libft.a
 INC	=	inc/
@@ -35,15 +36,25 @@ PUSH_SWAP_DIR	=	$(SRC_DIR)push_swap_u/errors.c \
 			$(SRC_DIR)push_swap_u/main.c \
 			$(SRC_DIR)push_swap_u/utils_s.c
 
+BONUS_DIR	=	
+
 SRCS	=	$(COMMANDS_DIR) $(PUSH_SWAP_DIR)
+SRCS_B	=	$(BONUS_DIR)
 
 OBJS	=	$(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
+OBJS_B	=	$(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS_B))
 
 $(LIBFT):
-		@make -C ./libft
+		@make -s -C ./libft
 
 $(NAME):	$(OBJS) $(LIBFT)
+		@echo "Make .o and push_swap."
 		@$(CC) $(CFLAGS) $(INC) $(OBJS) $(LIBFT) -o $(NAME)
+
+$(NAME_B):	$(OBJS) $(LIBFT)
+		@echo "Make .o, push_swap and checker."
+		@$(CC) $(CFLAGS) $(INC) $(OBJS) $(LIBFT) -o $(NAME)
+		@$(CC) $(CFLAGS) $(INC) $(OBJS_B) $(LIBFT) -o $(NAME_B)
 
 $(OBJ_DIR)%.o:	$(SRC_DIR)%.c
 		@mkdir -p $(@D)
@@ -51,14 +62,19 @@ $(OBJ_DIR)%.o:	$(SRC_DIR)%.c
 
 all:		$(NAME)
 
+bonus:		$(NAME_B)
+
 clean:
 		$(RM) -r $(OBJ_DIR)
-		@make clean -C ./libft
+		@make -s clean -C ./libft
+		@echo "Clean .o files."
 
 fclean:		clean
 		$(RM) $(NAME)
-		@make fclean -C ./libft
+		$(RM) $(NAME_B)
+		@make -s fclean -C ./libft
+		@echo "Clean exacuteble/s."
 
 re:		fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all bonus clean fclean re

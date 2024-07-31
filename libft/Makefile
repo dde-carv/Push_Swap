@@ -83,7 +83,6 @@ OBJ	=	$(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRC))
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-	@echo "Created .o files."
 	${LIBC} ${NAME} ${OBJ}
 
 $(OBJ_DIR)%.o:	$(SRC_DIR)%.c
@@ -92,11 +91,9 @@ $(OBJ_DIR)%.o:	$(SRC_DIR)%.c
 
 clean:
 	${RM} -r ${OBJ_DIR}
-	@echo "Cleaned .o files."
 
 fclean: clean
 	${RM} ${NAME}
-	@echo "Cleaned libft.a."
 
 re: fclean all
 

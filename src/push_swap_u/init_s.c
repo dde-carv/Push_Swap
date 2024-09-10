@@ -6,7 +6,7 @@
 /*   By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 15:25:16 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/07/30 13:21:59 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/08/05 14:45:39 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static void	append_node(t_stack_node **s, int n)
 	}
 }
 
-void	init_sa(t_stack_node **a, char **argv)
+void	init_sa(t_stack_node **a, t_stack_node **b, char **argv)
 {
 	long	n;
 	int	len;
@@ -74,12 +74,12 @@ void	init_sa(t_stack_node **a, char **argv)
 	while (argv[len])
 	{
 		if (syntax_error(argv[len]))
-			free_errors(a);
+			free_errors(a, b);
 		n = ft_atol(argv[len]);
 		if (n < INT_MIN || n > INT_MAX)
-			free_errors(a);
+			free_errors(a, b);
 		if (duplic_error(*a, (int)n))
-			free_errors(a);
+			free_errors(a, b);
 		append_node(a, (int)n);
 		len++;
 	}
@@ -105,16 +105,16 @@ void	push_init(t_stack_node **s, t_stack_node *up_node, char s_name)
 		if (s_name == 'a')
 		{
 			if (up_node->above_median)
-				ra(s);
+				ra(s, 42);
 			else
-				rra(s);
+				rra(s, 42);
 		}
 		else if (s_name == 'b')
 		{
 			if (up_node->above_median)
-				rb(s);
+				rb(s, 42);
 			else
-				rrb(s);
+				rrb(s, 42);
 		}
 	}
 }

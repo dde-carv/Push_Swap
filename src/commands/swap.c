@@ -6,7 +6,7 @@
 /*   By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:17:36 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/07/20 17:55:08 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/08/05 12:51:25 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,24 @@ static void	swap(t_stack_node **head)
 	(*head)->prev = NULL;
 }
 
-void	sa(t_stack_node **a)
+void	sa(t_stack_node **a, int toprint)
 {
 	swap(a);
-	ft_printf("sa\n");
+	if (toprint)
+		ft_printf("sa\n");
 }
 
-void	sb(t_stack_node **b)
+void	sb(t_stack_node **b, int toprint)
 {
 	swap(b);
-	ft_printf("sb\n");
+	if (toprint)
+		ft_printf("sb\n");
 }
 
-void	ss(t_stack_node **a, t_stack_node **b)
+void	ss(t_stack_node **a, t_stack_node **b, int toprint)
 {
 	swap(a);
 	swap(b);
-	ft_printf("sb\n");
+	if (toprint)
+		ft_printf("sb\n");
 }

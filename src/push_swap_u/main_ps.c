@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_ps.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 11:43:10 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/07/30 15:06:17 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/08/05 14:49:50 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
-	init_sa(&a, argv + 1);
+	init_sa(&a, &b, argv + 1);
 	if (!check_sorted(a))
 	{
 		if (stack_size(a) == 2)
-			sa(&a);
+			sa(&a, 42);
 		else if (stack_size(a) == 3)
 			sort_three(&a);
 		else

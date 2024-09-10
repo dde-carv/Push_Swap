@@ -6,7 +6,7 @@
 /*   By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 12:16:10 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/07/25 12:25:39 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/08/05 12:45:36 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	rotate_ab(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest)
 {
 	while (*b != cheapest->target_node && *a != cheapest)
-		rr(a, b);
+		rr(a, b, 42);
 	index_s(*a);
 	index_s(*b);
 }
@@ -23,7 +23,7 @@ static void	rotate_ab(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest
 static void	rev_rotate_ab(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest)
 {
 	while (*b != cheapest->target_node && *a != cheapest)
-		rrr(a, b);
+		rrr(a, b, 42);
 	index_s(*a);
 	index_s(*b);
 }
@@ -39,13 +39,13 @@ static void	move_ab(t_stack_node **a, t_stack_node **b)
 		rev_rotate_ab(a, b, cheap_node);
 	push_init(a, cheap_node, 'a');
 	push_init(b, cheap_node->target_node, 'b');
-	pb(b, a);
+	pb(b, a, 42);
 }
 
 static void	move_ba(t_stack_node **a, t_stack_node **b)
 {
 	push_init(a, (*b)->target_node, 'a');
-	pa(a, b);
+	pa(a, b, 42);
 }
 
 static void	min_top(t_stack_node **a)
@@ -53,9 +53,9 @@ static void	min_top(t_stack_node **a)
 	while ((*a)->nbr != find_min(*a)->nbr)
 	{
 		if (find_min(*a)->above_median)
-			ra(a);
+			ra(a, 42);
 		else
-			rra(a);
+			rra(a, 42);
 	}
 }
 
@@ -65,9 +65,9 @@ void	sort_stack(t_stack_node **a, t_stack_node **b)
 
 	len_a = stack_size(*a);
 	if (len_a-- > 3 && !check_sorted(*a))
-		pb(b, a);
+		pb(b, a, 42);
 	if (len_a-- > 3 && !check_sorted(*a))
-		pb(b, a);
+		pb(b, a, 42);
 	while (len_a-- > 3 && !check_sorted(*a))
 	{
 		init_na(*a, *b);

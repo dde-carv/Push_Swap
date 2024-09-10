@@ -6,7 +6,7 @@
 /*   By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 17:09:35 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/07/20 17:55:08 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/08/05 12:50:43 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	sort_three(t_stack_node **a)
 
 	big_node = find_max(*a);
 	if (big_node == *a)
-		ra(a);
+		ra(a, 42);
 	else if ((*a)->next == big_node)
-		rra(a);
+		rra(a, 42);
 	if ((*a)->nbr > (*a)->next->nbr)
-		sa(a);
+		sa(a, 42);
 }

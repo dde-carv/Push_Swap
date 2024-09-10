@@ -6,7 +6,7 @@
 #    By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/02 09:56:48 by dde-carv          #+#    #+#              #
-#    Updated: 2024/07/31 15:41:38 by dde-carv         ###   ########.fr        #
+#    Updated: 2024/08/02 16:19:49 by dde-carv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ LIBFT	=	./libft/libft.a
 INC	=	inc/
 SRC_DIR	=	src/
 OBJ_DIR	=	obj/
+SRCB_DIR	=	src_b/
+OBJB_DIR	=	obj_b/
 
 CC	=	@gcc
 CFLAGS	=	-Wall -Werror -Wextra -g -I
@@ -33,16 +35,16 @@ PUSH_SWAP_DIR	=	$(SRC_DIR)push_swap_u/errors.c \
 			$(SRC_DIR)push_swap_u/init_ab.c \
 			$(SRC_DIR)push_swap_u/init_ba.c \
 			$(SRC_DIR)push_swap_u/init_s.c \
-			$(SRC_DIR)push_swap_u/main.c \
+			$(SRC_DIR)push_swap_u/main_ps.c \
 			$(SRC_DIR)push_swap_u/utils_s.c
 
-BONUS_DIR	=	
+BONUS_DIR	=	$(SRCB_DIR)checker_u/main_ch.c
 
 SRCS	=	$(COMMANDS_DIR) $(PUSH_SWAP_DIR)
 SRCS_B	=	$(BONUS_DIR)
 
 OBJS	=	$(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
-OBJS_B	=	$(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS_B))
+OBJS_B	=	$(patsubst $(SRCB_DIR)%/*.c,$(OBJB_DIR)%/*.o,$(SRCS_B))
 
 $(LIBFT):
 		@make -s -C ./libft

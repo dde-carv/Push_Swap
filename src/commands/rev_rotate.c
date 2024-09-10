@@ -6,7 +6,7 @@
 /*   By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 14:17:13 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/07/20 17:55:08 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/08/05 12:49:35 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,24 @@ static void	rev_rotate(t_stack_node **s)
 	last->next->prev = last;
 }
 
-void	rra(t_stack_node **a)
+void	rra(t_stack_node **a, int toprint)
 {
 	rev_rotate(a);
-	ft_printf("rra\n");
+	if (toprint)
+		ft_printf("rra\n");
 }
 
-void	rrb(t_stack_node **b)
+void	rrb(t_stack_node **b, int toprint)
 {
 	rev_rotate(b);
-	ft_printf("rrb\n");
+	if (toprint)
+		ft_printf("rrb\n");
 }
 
-void	rrr(t_stack_node **a, t_stack_node **b)
+void	rrr(t_stack_node **a, t_stack_node **b, int toprint)
 {
 	rev_rotate(a);
 	rev_rotate(b);
-	ft_printf("rrr\n");
+	if (toprint)
+		ft_printf("rrr\n");
 }

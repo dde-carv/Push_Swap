@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+         #
+#    By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/02 09:56:48 by dde-carv          #+#    #+#              #
-#    Updated: 2024/08/02 16:19:49 by dde-carv         ###   ########.fr        #
+#    Updated: 2024/09/10 16:08:39 by dde-carv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,13 +35,14 @@ PUSH_SWAP_DIR	=	$(SRC_DIR)push_swap_u/errors.c \
 			$(SRC_DIR)push_swap_u/init_ab.c \
 			$(SRC_DIR)push_swap_u/init_ba.c \
 			$(SRC_DIR)push_swap_u/init_s.c \
-			$(SRC_DIR)push_swap_u/main_ps.c \
 			$(SRC_DIR)push_swap_u/utils_s.c
+
+MAIN_PS_DIR		=	$(SRC_DIR)push_swap_u/main_ps.c \
 
 BONUS_DIR	=	$(SRCB_DIR)checker_u/main_ch.c
 
-SRCS	=	$(COMMANDS_DIR) $(PUSH_SWAP_DIR)
-SRCS_B	=	$(BONUS_DIR)
+SRCS	=	$(COMMANDS_DIR) $(PUSH_SWAP_DIR) $(MAIN_PS_DIR)
+SRCS_B	=	$(COMMANDS_DIR) $(PUSH_SWAP_DIR) $(BONUS_DIR)
 
 OBJS	=	$(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
 OBJS_B	=	$(patsubst $(SRCB_DIR)%/*.c,$(OBJB_DIR)%/*.o,$(SRCS_B))

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_ch.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 16:01:08 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/08/05 14:40:01 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:08:47 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +51,15 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
-	init_sa(&a, argv + 1);
+	init_sa(&a, &b, argv + 1);
 	len = stack_size(a);
-	next_line = get_next_line(STDIN_FILENO);
+	next_line = get_next_line(1);
 	while (next_line)
 	{
 		command_cmp(&a, &b, next_line);
-		next_line = get_next_line(STDIN_FILENO);
+		next_line = get_next_line(1);
 	}
-	if (check_sorted(a) && stack_last(a) == len)
+	if (check_sorted(a) && stack_size(a) == len)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);

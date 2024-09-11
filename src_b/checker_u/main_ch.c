@@ -6,11 +6,20 @@
 /*   By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 16:01:08 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/09/11 13:15:00 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/09/11 13:57:03 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
+
+static void	free_checker_errors(t_stack_node **a, t_stack_node **b, char *command)
+{
+	free_stack(a);
+	free_stack(b);
+	free(command);
+	ft_printf("Error\n");
+	exit(1);
+}
 
 static void	command_cmp(t_stack_node **a, t_stack_node **b, char *command)
 {
@@ -37,7 +46,7 @@ static void	command_cmp(t_stack_node **a, t_stack_node **b, char *command)
 	else if (!ft_strncmp(command, "rrr\n", ft_strlen(command)))
 		rrr(a, b, 0);
 	else
-		free_errors(a, b);
+		free_checker_errors(a, b, command);
 }
 
 int	main(int argc, char **argv)
@@ -62,8 +71,5 @@ int	main(int argc, char **argv)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
-	free_stack(&a);
-	free_stack(&b);
-	free(next_line);
-	return (0);
+	return (free_stack(&a), free_stack(&b), free(next_line), 0);
 }

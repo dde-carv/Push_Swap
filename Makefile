@@ -6,7 +6,7 @@
 #    By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/02 09:56:48 by dde-carv          #+#    #+#              #
-#    Updated: 2024/09/10 16:08:39 by dde-carv         ###   ########.fr        #
+#    Updated: 2024/09/12 14:06:53 by dde-carv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ RM	=	@rm -f
 COMMANDS_DIR	=	$(SRC_DIR)commands/push.c \
 			$(SRC_DIR)commands/rev_rotate.c \
 			$(SRC_DIR)commands/rotate.c \
+			$(SRC_DIR)commands/sort_s_u.c \
 			$(SRC_DIR)commands/sort_s.c \
 			$(SRC_DIR)commands/sort_three.c \
 			$(SRC_DIR)commands/swap.c

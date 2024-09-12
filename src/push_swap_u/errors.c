@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 17:24:02 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/08/05 12:26:41 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/09/12 14:23:38 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ int	duplic_error(t_stack_node *a, int n)
 			return (1);
 		a = a->next;
 	}
- 	return (0);
+	return (0);
 }
 
 void	free_stack(t_stack_node **s)
 {
 	t_stack_node	*tmp;
 	t_stack_node	*current;
-	
+
 	if (!s)
 		return ;
 	current = *s;

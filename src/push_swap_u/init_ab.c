@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_ab.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 16:23:57 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/07/25 12:28:31 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/09/12 14:21:45 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ void	index_s(t_stack_node *s)
 			s->above_median = 1;
 		else
 			s->above_median = 0;
-	s = s->next;
-	len++;
+		s = s->next;
+		len++;
 	}
 }
 
 static void	target_a(t_stack_node *a, t_stack_node *b)
 {
-	long		best_match;
+	long			best_match;
 	t_stack_node	*index_b;
 	t_stack_node	*target;
 
@@ -70,7 +70,7 @@ static void	cost_anal_a(t_stack_node *a, t_stack_node *b)
 	while (a)
 	{
 		a->push_cost = a->index;
-		if(!(a->above_median))
+		if (!(a->above_median))
 			a->push_cost = len_a - (a->index);
 		if (a->target_node->above_median)
 			a->push_cost += a->target_node->index;
@@ -82,7 +82,7 @@ static void	cost_anal_a(t_stack_node *a, t_stack_node *b)
 
 void	set_cheap(t_stack_node *s)
 {
-	long		cheap_value;
+	long			cheap_value;
 	t_stack_node	*cheap_node;
 
 	if (!s)

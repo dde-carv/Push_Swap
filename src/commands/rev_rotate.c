@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rev_rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 14:17:13 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/08/05 12:49:35 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/09/12 13:53:39 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	rev_rotate(t_stack_node **s)
 {
 	t_stack_node	*last;
 
-	if(!*s || !(*s)->next)
+	if (!*s || !(*s)->next)
 		return ;
 	last = stack_last(*s);
 	last->prev->next = NULL;

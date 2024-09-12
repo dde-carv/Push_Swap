@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_ps.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 11:43:10 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/08/05 14:49:50 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/09/12 14:24:59 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	main(int argc, char **argv)
 {
 	t_stack_node	*a;
 	t_stack_node	*b;
-
 
 	a = NULL;
 	b = NULL;

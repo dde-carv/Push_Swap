@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_s.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 15:52:39 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/07/25 12:25:02 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/09/12 14:23:21 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	check_sorted(t_stack_node *s)
 
 t_stack_node	*find_min(t_stack_node *s)
 {
-	long		min;
+	long			min;
 	t_stack_node	*min_node;
 
 	if (!s)
@@ -76,7 +76,7 @@ t_stack_node	*find_min(t_stack_node *s)
 
 t_stack_node	*find_max(t_stack_node *s)
 {
-	long		max;
+	long			max;
 	t_stack_node	*max_node;
 
 	if (!s)

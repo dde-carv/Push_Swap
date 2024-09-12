@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_s.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 15:25:16 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/08/05 14:45:39 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/09/12 14:24:45 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static long	ft_atol(const char *str)
 {
-	int	len;
-	int	neg;
+	int		len;
+	int		neg;
 	long	nb;
 
 	len = 0;
@@ -52,7 +52,7 @@ static void	append_node(t_stack_node **s, int n)
 		return ;
 	node->next = NULL;
 	node->nbr = n;
-	if(!(*s))
+	if (!(*s))
 	{
 		*s = node;
 		node->prev = NULL;
@@ -68,7 +68,7 @@ static void	append_node(t_stack_node **s, int n)
 void	init_sa(t_stack_node **a, t_stack_node **b, char **argv)
 {
 	long	n;
-	int	len;
+	int		len;
 
 	len = 0;
 	while (argv[len])

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_ba.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dde-carv <dde-carv@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 12:23:46 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/07/20 17:55:08 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/09/12 14:22:30 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	target_b(t_stack_node *a, t_stack_node *b)
 {
-	long		best_match;
+	long			best_match;
 	t_stack_node	*index_a;
 	t_stack_node	*target;
 

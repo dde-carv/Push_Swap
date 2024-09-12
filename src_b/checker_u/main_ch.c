@@ -6,13 +6,13 @@
 /*   By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 16:01:08 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/09/11 13:57:03 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/09/12 11:19:14 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-static void	free_checker_errors(t_stack_node **a, t_stack_node **b, char *command)
+static void	free_error_check(t_stack_node **a, t_stack_node **b, char *command)
 {
 	free_stack(a);
 	free_stack(b);
@@ -46,15 +46,15 @@ static void	command_cmp(t_stack_node **a, t_stack_node **b, char *command)
 	else if (!ft_strncmp(command, "rrr\n", ft_strlen(command)))
 		rrr(a, b, 0);
 	else
-		free_checker_errors(a, b, command);
+		free_error_check(a, b, command);
 }
 
 int	main(int argc, char **argv)
 {
 	t_stack_node	*a;
 	t_stack_node	*b;
-	char		*next_line;
-	int		len;
+	char			*next_line;
+	int				len;
 
 	a = NULL;
 	b = NULL;
@@ -62,10 +62,12 @@ int	main(int argc, char **argv)
 		return (1);
 	init_sa(&a, &b, argv + 1);
 	len = stack_size(a);
-	while ((next_line = get_next_line(1)) != NULL)
+	next_line = get_next_line(1);
+	while (next_line)
 	{
 		command_cmp(&a, &b, next_line);
 		free(next_line);
+		next_line = get_next_line(1);
 	}
 	if (check_sorted(a) && stack_size(a) == len)
 		write(1, "OK\n", 3);

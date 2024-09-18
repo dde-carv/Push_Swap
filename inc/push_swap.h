@@ -6,7 +6,7 @@
 /*   By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 10:11:56 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/09/17 14:25:05 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/09/18 10:55:51 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,3 @@ void			sort_stack(t_stack_node **a, t_stack_node **b);
 void			sort_three(t_stack_node **a);
 
 #endif
-

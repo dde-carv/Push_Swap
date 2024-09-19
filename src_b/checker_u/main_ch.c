@@ -6,7 +6,7 @@
 /*   By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 16:01:08 by dde-carv          #+#    #+#             */
-/*   Updated: 2024/09/12 11:19:14 by dde-carv         ###   ########.fr       */
+/*   Updated: 2024/09/19 11:23:28 by dde-carv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,12 @@ int	main(int argc, char **argv)
 		return (1);
 	init_sa(&a, &b, argv + 1);
 	len = stack_size(a);
-	next_line = get_next_line(1);
+	next_line = get_next_line(0);
 	while (next_line)
 	{
 		command_cmp(&a, &b, next_line);
 		free(next_line);
-		next_line = get_next_line(1);
+		next_line = get_next_line(0);
 	}
 	if (check_sorted(a) && stack_size(a) == len)
 		write(1, "OK\n", 3);

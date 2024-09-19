@@ -6,7 +6,7 @@
 #    By: dde-carv <dde-carv@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/02 09:56:48 by dde-carv          #+#    #+#              #
-#    Updated: 2024/09/12 14:06:53 by dde-carv         ###   ########.fr        #
+#    Updated: 2024/09/19 11:23:35 by dde-carv         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJ_DIR	=	obj/
 SRCB_DIR	=	src_b/
 OBJB_DIR	=	obj_b/
 
-CC	=	@gcc
+CC	=	@cc
 CFLAGS	=	-Wall -Werror -Wextra -g -I
 RM	=	@rm -f
 
